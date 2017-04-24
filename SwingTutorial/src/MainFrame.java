@@ -8,17 +8,24 @@ import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
 public class MainFrame extends JFrame {
+	
+	private DetailsPanel detailsPanel;
+	
 	public MainFrame(String title){
 		super(title);
+		
 		
 		setLayout(new BorderLayout());
 		
 		JTextArea textArea = new JTextArea();
 		JButton button  = new JButton("click me!");
+		detailsPanel = new DetailsPanel();
+		
 		
 		Container c = getContentPane();
 		c.add(textArea, BorderLayout.CENTER);
 		c.add(button, BorderLayout.SOUTH);
+		c.add(detailsPanel, BorderLayout.EAST);
 		
 		button.addActionListener(new ActionListener() {
 			
