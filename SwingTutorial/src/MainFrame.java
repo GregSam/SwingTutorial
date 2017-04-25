@@ -14,12 +14,9 @@ public class MainFrame extends JFrame {
 	public MainFrame(String title){
 		super(title);
 		
-		
 		setLayout(new BorderLayout());
 		
 		JTextArea textArea = new JTextArea();
-		JButton button  = new JButton("click me!");
-		
 		
 		detailsPanel = new DetailsPanel();
 		detailsPanel.addDetailListener(new DetailListener(){
@@ -30,20 +27,10 @@ public class MainFrame extends JFrame {
 			}
 		});
 		
-		
 		Container c = getContentPane();
 		c.add(textArea, BorderLayout.CENTER);
-		c.add(button, BorderLayout.SOUTH);
 		c.add(detailsPanel, BorderLayout.EAST);
 		
-		button.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				textArea.append("Hello Swing!\n");
-				
-			}
-		});
+		
 	}
 }
