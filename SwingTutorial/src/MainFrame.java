@@ -19,7 +19,16 @@ public class MainFrame extends JFrame {
 		
 		JTextArea textArea = new JTextArea();
 		JButton button  = new JButton("click me!");
+		
+		
 		detailsPanel = new DetailsPanel();
+		detailsPanel.addDetailListener(new DetailListener(){
+			public void detailEventOccured(DetailEvent event){
+				String text = event.getText();
+				
+				textArea.append(text);
+			}
+		});
 		
 		
 		Container c = getContentPane();
@@ -31,6 +40,7 @@ public class MainFrame extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				textArea.append("Hello Swing!\n");
 				
 			}
