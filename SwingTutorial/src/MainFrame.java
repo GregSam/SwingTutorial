@@ -27,6 +27,7 @@ public class MainFrame extends JFrame {
 			}
 		});
 		
+		
 		Container c = getContentPane();
 		c.add(textArea, BorderLayout.CENTER);
 		c.add(detailsPanel, BorderLayout.EAST);
